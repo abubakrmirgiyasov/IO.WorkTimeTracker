@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36221.1 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkTimeTracker.API", "WorkTimeTracker.API\WorkTimeTracker.API.csproj", "{27A16246-EAEC-42C9-8666-8042113B367E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{4821F998-AB27-4727-842D-605AD949F652}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{27A16246-EAEC-42C9-8666-8042113B367E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27A16246-EAEC-42C9-8666-8042113B367E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27A16246-EAEC-42C9-8666-8042113B367E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27A16246-EAEC-42C9-8666-8042113B367E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{27A16246-EAEC-42C9-8666-8042113B367E} = {36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2FCF00D9-C886-4765-99F8-E03DA62B7246}
+	EndGlobalSection
+EndGlobal
