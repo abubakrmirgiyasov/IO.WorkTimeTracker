@@ -56,7 +56,7 @@ public class WorkTimeTracking : Entity
     public void SetDateMin(DateTime dateMin)
     {
         if(DateTime.MinValue == DateMin)
-            throw new BussinessLogicException(WorkTimeTrackingErrors.DateMainCantBeNull);
+            throw new BussinessLogicException(WorkTimeTrackingErrors.DateMinCantBeNull);
 
         DateMin = dateMin;
     }
@@ -91,7 +91,7 @@ public class WorkTimeTracking : Entity
             "WorkTimeTracking.NameCantBeNull",
             "Название не может быть пустым."
         );
-
+        
         public static readonly Error DescriptionCantBeNull = new(
             "WorkTimeTracking.DescriptionCantBeNull",
             "Описание не может быть пустым."
@@ -102,10 +102,10 @@ public class WorkTimeTracking : Entity
             "Краткое описание не может быть пустым."
         );
 
-        public static readonly Error DateMainCantBeNull = new(
-            "WorkTimeTracking.DataMainCantBeNull",
-            "Основные данные не могут быть пустыми."
-        );
+        public static readonly Error DateMinCantBeNull = new(
+             "WorkTimeTracking.DateMinCantBeNull",
+             "Минимальная дата не может быть пустой."
+         );
 
         public static readonly Error DateMaxCantBeNull = new(
              "WorkTimeTracking.DateMaxCantBeNull",

@@ -47,17 +47,17 @@ public class ProjectType : Entity
     public static class ProjectTypeErrors
     {
         public static readonly Error NameCantBeNull = new(
-            "WorkTimeTracking.NameCantBeNull",
+            "ProjectType.NameCantBeNull",
             "Название не может быть пустым."
         );
 
         public static readonly Error DescriptionCantBeNull = new(
-           "WorkTimeTracking.DescriptionCantBeNull",
+           "ProjectType.DescriptionCantBeNull",
            "Описание не может быть пустым."
         );
 
         public static readonly Error ProjectIdCantBeNull = new(
-             "WorkTimeTracking.ProjectIdCantBeNull",
+            "ProjectType.ProjectIdCantBeNull",
             "Тип проекта не может быть пустым."
         );
     }

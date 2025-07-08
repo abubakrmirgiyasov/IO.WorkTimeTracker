@@ -1,7 +1,6 @@
 using WorkTimeTracker.Domain.Common;
 using WorkTimeTracker.Shared.Exceptions;
 using WorkTimeTracker.Shared.Models;
-using static WorkTimeTracker.Domain.Models.WorkTimeTracking;
 
 namespace WorkTimeTracker.Domain.Models;
 
@@ -23,7 +22,7 @@ public class Project : Entity
 
     public void SetLink(string link)
     {
-        if(string.IsNullOrWhiteSpace(link))
+        if (string.IsNullOrWhiteSpace(link))
             throw new BussinessLogicException(ProjectErrors.LinkCantBeNull);
 
         Link = link;
@@ -31,7 +30,7 @@ public class Project : Entity
 
     public void SetName(string name)
     {
-        if(string.IsNullOrWhiteSpace(name))
+        if (string.IsNullOrWhiteSpace(name))
             throw new BussinessLogicException(ProjectErrors.NameCantBeNull);
 
         Name = name;
@@ -47,7 +46,7 @@ public class Project : Entity
 
     public void SetProjectId(int projectId)
     {
-        if(projectId <= 0)
+        if (projectId <= 0)
             throw new BussinessLogicException(ProjectErrors.ProjectIdCantBeNull);
 
         ProjectId = projectId;
@@ -56,22 +55,22 @@ public class Project : Entity
     public static class ProjectErrors
     {
         public static readonly Error LinkCantBeNull = new(
-           "WorkTimeTracking.NameCantBeNull",
+           "Project.NameCantBeNull",
            "Название не может быть пустым."
         );
 
         public static readonly Error NameCantBeNull = new(
-            "WorkTimeTracking.NameCantBeNull",
+            "Project.NameCantBeNull",
             "Название не может быть пустым."
         );
 
         public static readonly Error DescriptionCantBeNull = new(
-           "WorkTimeTracking.DescriptionCantBeNull",
+           "Project.DescriptionCantBeNull",
            "Описание не может быть пустым."
         );
 
         public static readonly Error ProjectIdCantBeNull = new(
-           "WorkTimeTracking.ProjectIdCantBeNull",
+           "Project.ProjectIdCantBeNull",
           "Тип проекта не может быть пустым."
         );
     }
