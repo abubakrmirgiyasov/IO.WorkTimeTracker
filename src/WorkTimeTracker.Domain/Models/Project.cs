@@ -71,7 +71,7 @@ public class Project : Entity
 
         public static readonly Error ProjectIdCantBeNull = new(
            "Project.ProjectIdCantBeNull",
-          "Тип проекта не может быть пустым."
+           "Тип проекта не может быть пустым."
         );
     }
 }

@@ -91,7 +91,7 @@ public class WorkTimeTracking : Entity
             "WorkTimeTracking.NameCantBeNull",
             "Название не может быть пустым."
         );
-        
+
         public static readonly Error DescriptionCantBeNull = new(
             "WorkTimeTracking.DescriptionCantBeNull",
             "Описание не может быть пустым."
