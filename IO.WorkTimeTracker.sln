@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkTimeTracker.Architectur
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkTimeTracker.UnitTests", "tests\WorkTimeTracker.UnitTests\WorkTimeTracker.UnitTests.csproj", "{FC9F2280-D9C3-7AF7-8166-3AB551EE7904}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkTimeTracker.Shared", "src\WorkTimeTracker.Shared\WorkTimeTracker.Shared.csproj", "{EADD7034-14DC-9AD6-62DE-87F74C0E7331}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,10 @@ Global
 		{FC9F2280-D9C3-7AF7-8166-3AB551EE7904}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC9F2280-D9C3-7AF7-8166-3AB551EE7904}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC9F2280-D9C3-7AF7-8166-3AB551EE7904}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EADD7034-14DC-9AD6-62DE-87F74C0E7331}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EADD7034-14DC-9AD6-62DE-87F74C0E7331}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EADD7034-14DC-9AD6-62DE-87F74C0E7331}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EADD7034-14DC-9AD6-62DE-87F74C0E7331}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +66,7 @@ Global
 		{65AF668E-31D2-9C11-0DF6-128F2CD1DD2F} = {36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}
 		{0176D553-B088-4EF1-71DA-4597AA7AF2AF} = {4821F998-AB27-4727-842D-605AD949F652}
 		{FC9F2280-D9C3-7AF7-8166-3AB551EE7904} = {4821F998-AB27-4727-842D-605AD949F652}
+		{EADD7034-14DC-9AD6-62DE-87F74C0E7331} = {36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FCF00D9-C886-4765-99F8-E03DA62B7246}
