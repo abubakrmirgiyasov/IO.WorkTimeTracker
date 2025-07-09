@@ -12,12 +12,9 @@ public class Project : Entity
 
     public string? Description { get; private set; }
 
-    public int ProjectId { get; private set; }
-
-    public Project(string name, int prolectId)
+    public Project(string name)
     {
         Name = name;
-        ProjectId = prolectId;
     }
 
     public void SetLink(string link)
@@ -44,14 +41,6 @@ public class Project : Entity
         Description = description;
     }
 
-    public void SetProjectId(int projectId)
-    {
-        if (projectId <= 0)
-            throw new BussinessLogicException(ProjectErrors.ProjectIdCantBeNull);
-
-        ProjectId = projectId;
-    }
-
     public static class ProjectErrors
     {
         public static readonly Error LinkCantBeNull = new(
@@ -67,11 +56,6 @@ public class Project : Entity
         public static readonly Error DescriptionCantBeNull = new(
            "Project.DescriptionCantBeNull",
            "Описание не может быть пустым."
-        );
-
-        public static readonly Error ProjectIdCantBeNull = new(
-           "Project.ProjectIdCantBeNull",
-           "Тип проекта не может быть пустым."
         );
     }
 }
