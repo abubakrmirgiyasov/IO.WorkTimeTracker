@@ -10,19 +10,14 @@ public class ProjectType : Entity
 
     public string? Description { get; private set; }
 
-    public long ProjectId { get; private set; }
-
-    public Project Project { get; set; } = default!;
-
-    public ProjectType(string name, long projectId)
+    public ProjectType(string name)
     {
         Name = name;
-        ProjectId = projectId;
     }
 
     public void SetName(string name)
     {
-        if (string.IsNullOrEmpty(Name))
+        if (string.IsNullOrEmpty(name))
             throw new BussinessLogicException(ProjectTypeErrors.NameCantBeNull);
 
         Name = name;
@@ -30,18 +25,10 @@ public class ProjectType : Entity
 
     public void SetDescription(string description)
     {
-        if (string.IsNullOrEmpty(Description))
+        if (string.IsNullOrEmpty(description))
             throw new BussinessLogicException(ProjectTypeErrors.DescriptionCantBeNull);
 
         Description = description;
-    }
-
-    public void SetProjectId(long projectId)
-    {
-        if(projectId <= 0)
-            throw new BussinessLogicException(ProjectTypeErrors.ProjectIdCantBeNull);
-
-        ProjectId = projectId;
     }
 
     public static class ProjectTypeErrors
@@ -54,11 +41,6 @@ public class ProjectType : Entity
         public static readonly Error DescriptionCantBeNull = new(
            "ProjectType.DescriptionCantBeNull",
            "Описание не может быть пустым."
-        );
-
-        public static readonly Error ProjectIdCantBeNull = new(
-            "ProjectType.ProjectIdCantBeNull",
-            "Тип проекта не может быть пустым."
         );
     }
 }

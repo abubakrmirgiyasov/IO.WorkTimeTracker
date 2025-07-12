@@ -1,8 +1,10 @@
+using WorkTimeTracker.Application;
 using WorkTimeTracker.Infrastructure.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services
+    .AddApplicationServices()
     .AddInfrastructureServices(builder.Configuration)
     .AddRepositories();
 
