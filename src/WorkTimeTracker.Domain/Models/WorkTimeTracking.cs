@@ -47,7 +47,7 @@ public class WorkTimeTracking : Entity
 
     public void SetShortDescription(string shortDescription)
     {
-        if (string.IsNullOrEmpty(ShortDescription))
+        if (string.IsNullOrEmpty(shortDescription))
             throw new BussinessLogicException(WorkTimeTrackingErrors.ShortDescriptionCantBeNull);
 
         ShortDescription  = shortDescription;
@@ -55,7 +55,7 @@ public class WorkTimeTracking : Entity
 
     public void SetDateMin(DateTime dateMin)
     {
-        if(DateTime.MinValue == DateMin)
+        if(DateTime.MinValue == dateMin)
             throw new BussinessLogicException(WorkTimeTrackingErrors.DateMinCantBeNull);
 
         DateMin = dateMin;
@@ -63,7 +63,7 @@ public class WorkTimeTracking : Entity
 
     public void SetDateMax(DateTime dateMax)
     {
-        if (DateMax >= DateTime.MinValue)
+        if (dateMax >= DateTime.MinValue)
             throw new BussinessLogicException(WorkTimeTrackingErrors.DateMaxCantBeNull);
 
         DateMax = dateMax;
@@ -71,7 +71,7 @@ public class WorkTimeTracking : Entity
 
     public void SetTime(DateTime time)
     {
-        if (Time == DateTime.MinValue)
+        if (time == DateTime.MinValue)
             throw new BussinessLogicException(WorkTimeTrackingErrors.TimeCantBeNull);
 
         Time = time;
@@ -79,7 +79,7 @@ public class WorkTimeTracking : Entity
 
     public void SetProjectTypeId(long projectTypeId)
     {
-        if (ProjectTypeId <= 0)
+        if (projectTypeId <= 0)
             throw new BussinessLogicException(WorkTimeTrackingErrors.ProjectTypeIdCantBeNull);
 
         ProjectTypeId = projectTypeId;
