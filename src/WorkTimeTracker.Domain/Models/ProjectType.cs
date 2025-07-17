@@ -10,6 +10,8 @@ public class ProjectType : Entity
 
     public string? Description { get; private set; }
 
+    public List<ProjectWithProjectTypeRelation> ProjectTypeRelations { get; set; } = default!;
+
     public ProjectType(string name)
     {
         Name = name;

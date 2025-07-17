@@ -46,7 +46,7 @@ internal sealed class CreateProjectTypeCommandHandler : IRequestHandler<CreatePr
         var projectType = new ProjectType(request.Name)
         {
             CreatedDate = _timeProvider.GetLocalNow().DateTime,
-            CreatedBy = 1,
+            CreatedBy = 1
         };
 
         if (!string.IsNullOrEmpty(request.Description))
