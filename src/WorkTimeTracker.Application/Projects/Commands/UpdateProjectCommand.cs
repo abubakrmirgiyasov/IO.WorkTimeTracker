@@ -17,12 +17,13 @@ public sealed class UpdateProjectCommandValidator : AbstractValidator<UpdateProj
 {
     public UpdateProjectCommandValidator()
     {
-        RuleFor(x => x.Id)
-            .GreaterThan(0);
-        RuleFor(x => x.Link)
-          .NotEmpty()
-          .When(x => !string.IsNullOrEmpty(x.Link));
+        RuleFor(x => x.Id).GreaterThan(0);
+
         RuleFor(x => x.Name).NotEmpty();
+
+        RuleFor(x => x.Link).NotEmpty()
+          .When(x => !string.IsNullOrEmpty(x.Link));
+
         RuleFor(x => x.Description)
             .NotEmpty()
             .When(x => !string.IsNullOrEmpty(x.Description));
