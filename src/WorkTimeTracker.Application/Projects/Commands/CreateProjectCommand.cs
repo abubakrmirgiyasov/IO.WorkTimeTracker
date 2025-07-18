@@ -17,11 +17,14 @@ public sealed class CreateProjectCommandValidator : AbstractValidator<CreateProj
 {
     public CreateProjectCommandValidator()
     {
-        RuleFor(x => x.Link).NotEmpty().When(x => !string.IsNullOrWhiteSpace(x.Link));
-
-        RuleFor(x => x.Name).NotEmpty();
-
-        RuleFor(x => x.Description).NotEmpty().When(x => !string.IsNullOrWhiteSpace(x.Description));
+        RuleFor(x => x.Link)
+            .NotEmpty()
+            .When(x => !string.IsNullOrWhiteSpace(x.Link));
+        RuleFor(x => x.Name)
+            .NotEmpty();
+        RuleFor(x => x.Description)
+            .NotEmpty()
+            .When(x => !string.IsNullOrWhiteSpace(x.Description));
     }
 }
 

@@ -5,6 +5,6 @@ public static class WorkTimeTrackingErrors
 {
     public static readonly Error NotFound = new(
         "WorkTimeTracking.NotFound",
-        "Тип проекта не найден."
+        "Учёт рабочего времени не найден."
     );
 }

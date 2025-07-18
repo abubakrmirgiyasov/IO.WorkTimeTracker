@@ -56,20 +56,14 @@ internal sealed class UpdateWorkTimeTrackingCommandHandler : IRequestHandler<Upd
 
         if (workTimeTracking is null)
             throw new ResourceNotFoundException(WorkTimeTrackingErrors.NotFound);
-
         if (!string.IsNullOrEmpty(request.Description))
             workTimeTracking.SetDescription(request.Description);
 
         workTimeTracking.SetName(request.Name);
-
         workTimeTracking.SetShortDescription(request.ShortDescription);
-
         workTimeTracking.SetDateMin(request.DateMin);
-
         workTimeTracking.SetDateMax(request.DateMax);
-
         workTimeTracking.SetTime(request.Time);
-
         workTimeTracking.SetProjectTypeId(request.ProjectTypeId);
 
         // TODO

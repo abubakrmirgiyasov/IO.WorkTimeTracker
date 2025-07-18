@@ -8,13 +8,13 @@ using WorkTimeTracker.Shared.Exceptions;
 
 namespace WorkTimeTracker.Application.Projects.Queries;
 
-public sealed record GetProjectById(long id) : IRequest<ProjectDto>;
+public sealed record GetProjectById(long Id) : IRequest<ProjectDto>;
 
 public sealed class GetProjectByIdValidator : AbstractValidator<GetProjectById>
 {
     public GetProjectByIdValidator()
     {
-        RuleFor(x => x.id).GreaterThan(0);
+        RuleFor(x => x.Id).GreaterThan(0);
     }
 }
 
@@ -31,7 +31,7 @@ internal sealed class GetProjectByIdHandler : IRequestHandler<GetProjectById, Pr
 
     public async Task<ProjectDto> Handle(GetProjectById request, CancellationToken cancellationToken = default)
     {
-        var spec = new ProjectByIdSpec(request.id, asNoTracking: false);
+        var spec = new ProjectByIdSpec(request.Id, asNoTracking: false);
         var project = await _projectRepository.FirstOrDefaultAsync(spec, cancellationToken);
 
         if (project is null)

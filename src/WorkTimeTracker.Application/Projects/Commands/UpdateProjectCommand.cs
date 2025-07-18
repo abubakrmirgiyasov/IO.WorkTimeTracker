@@ -17,12 +17,12 @@ public sealed class UpdateProjectCommandValidator : AbstractValidator<UpdateProj
 {
     public UpdateProjectCommandValidator()
     {
+        RuleFor(x => x.Id)
+            .GreaterThan(0);
         RuleFor(x => x.Link)
           .NotEmpty()
           .When(x => !string.IsNullOrEmpty(x.Link));
-
         RuleFor(x => x.Name).NotEmpty();
-
         RuleFor(x => x.Description)
             .NotEmpty()
             .When(x => !string.IsNullOrEmpty(x.Description));
@@ -51,12 +51,9 @@ internal sealed class UpdateProjectCommandHandler : IRequestHandler<UpdateProjec
 
         if (project is null)
             throw new ResourceNotFoundException(ProjectErrors.NotFound);
-
         if (!string.IsNullOrEmpty(request.Link))
             project.SetLink(request.Link);
-
         project.SetName(request.Name);
-
         if (!string.IsNullOrEmpty(request.Description))
             project.SetDescription(request.Description);
 
