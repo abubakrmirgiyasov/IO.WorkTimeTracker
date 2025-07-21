@@ -4,6 +4,7 @@ using MediatR;
 using WorkTimeTracker.Application.ProjectTypes.Models;
 using WorkTimeTracker.Application.ProjectTypes.Repositories;
 using WorkTimeTracker.Application.ProjectTypes.Specifications;
+using WorkTimeTracker.Shared.Exceptions;
 
 namespace WorkTimeTracker.Application.ProjectTypes.Queries;
 
@@ -30,10 +31,13 @@ internal sealed class GetProjectTypeByIdHandler : IRequestHandler<GetProjectType
         _mapper = mapper;
     }
 
-    public async Task<ProjectTypeDto> Handle(GetProjectTypeById request, CancellationToken cancellationToken)
+    public async Task<ProjectTypeDto> Handle(GetProjectTypeById request, CancellationToken cancellationToken = default)
     {
         var spec = new ProjectTypeByIdSpec(request.ProjectTypeId, asNoTracking: true);
         var projectType = await _projectTypeRepository.FirstOrDefaultAsync(spec, cancellationToken);
+
+        if (projectType is null)
+            throw new ResourceNotFoundException(ProjectTypeErrors.NotFound);
 
         return _mapper.Map<ProjectTypeDto>(projectType);
     }
