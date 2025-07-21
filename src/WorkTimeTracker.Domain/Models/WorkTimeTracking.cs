@@ -39,7 +39,7 @@ public class WorkTimeTracking : Entity
 
     public void SetDescription(string description)
     {
-        if (string.IsNullOrEmpty(Description))
+        if (string.IsNullOrEmpty(description))
             throw new BussinessLogicException(WorkTimeTrackingErrors.DescriptionCantBeNull);
 
         Description = description;
@@ -63,7 +63,7 @@ public class WorkTimeTracking : Entity
 
     public void SetDateMax(DateTime dateMax)
     {
-        if (dateMax >= DateTime.MinValue)
+        if (dateMax <= DateTime.MinValue)
             throw new BussinessLogicException(WorkTimeTrackingErrors.DateMaxCantBeNull);
 
         DateMax = dateMax;
