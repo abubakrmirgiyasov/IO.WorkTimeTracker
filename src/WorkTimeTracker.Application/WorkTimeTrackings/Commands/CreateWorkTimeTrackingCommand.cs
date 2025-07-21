@@ -1,7 +1,6 @@
 using AutoMapper;
 using FluentValidation;
 using MediatR;
-using WorkTimeTracker.Application.ProjectTypes.Models;
 using WorkTimeTracker.Application.WorkTimeTrackings.Models;
 using WorkTimeTracker.Application.WorkTimeTrackings.Repositories;
 using WorkTimeTracker.Domain.Models;
@@ -15,8 +14,7 @@ public sealed record CreateWorkTimeTrackingCommand(
     DateTime DateMin,
     DateTime DateMax,
     DateTime Time,
-    long ProjectTypeId,
-    ProjectTypeDto ProjectType
+    long ProjectTypeId
 ) : IRequest<WorkTimeTrackingDto>;
 
 public sealed class CreateWorkTimeTrackingCommandValidator : AbstractValidator<CreateWorkTimeTrackingCommand>
@@ -33,7 +31,6 @@ public sealed class CreateWorkTimeTrackingCommandValidator : AbstractValidator<C
         RuleFor(x => x.DateMax).NotEmpty();
         RuleFor(x => x.Time).NotEmpty();
         RuleFor(x => x.ProjectTypeId).NotEmpty();
-        RuleFor(x => x.ProjectType).NotEmpty();
     }
 }
 

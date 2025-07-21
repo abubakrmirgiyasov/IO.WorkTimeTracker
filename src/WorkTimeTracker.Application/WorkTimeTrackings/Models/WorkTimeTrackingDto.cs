@@ -4,6 +4,8 @@ namespace WorkTimeTracker.Application.WorkTimeTrackings.Models;
 
 public sealed class WorkTimeTrackingDto
 {
+    public long Id { get; set; }
+
     public required string Name { get; set; }
 
     public string? Description { get; set; }

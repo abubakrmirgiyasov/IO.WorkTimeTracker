@@ -31,12 +31,12 @@ internal sealed class GetProjectTypeByIdHandler : IRequestHandler<GetProjectType
         _mapper = mapper;
     }
 
-    public async Task<ProjectTypeDto> Handle(GetProjectTypeById request, CancellationToken cancellationToken)
+    public async Task<ProjectTypeDto> Handle(GetProjectTypeById request, CancellationToken cancellationToken = default)
     {
         var spec = new ProjectTypeByIdSpec(request.ProjectTypeId, asNoTracking: true);
         var projectType = await _projectTypeRepository.FirstOrDefaultAsync(spec, cancellationToken);
 
-        if (spec is null)
+        if (projectType is null)
             throw new ResourceNotFoundException(ProjectTypeErrors.NotFound);
 
         return _mapper.Map<ProjectTypeDto>(projectType);

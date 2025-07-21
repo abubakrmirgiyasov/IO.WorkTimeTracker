@@ -8,13 +8,13 @@ using WorkTimeTracker.Shared.Exceptions;
 
 namespace WorkTimeTracker.Application.WorkTimeTrackings.Queries;
 
-public sealed record GetWorkTimeTrackingById(long Id) : IRequest<WorkTimeTrackingDto>;
+public sealed record GetWorkTimeTrackingById(long WorkTimeTrackingId) : IRequest<WorkTimeTrackingDto>;
 
 public sealed class GetWorkTimeTrackingByIdValidator : AbstractValidator<GetWorkTimeTrackingById>
 {
     public GetWorkTimeTrackingByIdValidator()
     {
-        RuleFor(x => x.Id).GreaterThan(0);
+        RuleFor(x => x.WorkTimeTrackingId).GreaterThan(0);
     }
 }
 
@@ -31,7 +31,7 @@ internal sealed class GetWorkTimeTrackingByIdHandler : IRequestHandler<GetWorkTi
 
     public async Task<WorkTimeTrackingDto> Handle(GetWorkTimeTrackingById request, CancellationToken cancellationToken = default)
     {
-        var spec = new WorkTimeTrackingByIdSpec(request.Id, asNoTracking: true);
+        var spec = new WorkTimeTrackingByIdSpec(request.WorkTimeTrackingId, asNoTracking: true);
         var workTimeTracking = await _workTimeTrackingRepository.FirstOrDefaultAsync(spec, cancellationToken);
 
         if (workTimeTracking is null)

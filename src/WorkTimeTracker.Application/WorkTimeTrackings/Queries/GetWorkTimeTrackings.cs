@@ -1,4 +1,4 @@
-using Ardalis.Specification;
+    using Ardalis.Specification;
 using AutoMapper;
 using MediatR;
 using WorkTimeTracker.Application.Common.Specifications;

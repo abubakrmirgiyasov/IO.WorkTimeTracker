@@ -12,10 +12,10 @@ public sealed class DeleteProjectCommandValidator : AbstractValidator<DeleteProj
 {
     public DeleteProjectCommandValidator()
     {
-        RuleFor(x => x.Id)
-            .GreaterThan(0);
+        RuleFor(x => x.Id).GreaterThan(0);
     }
 }
+
 internal sealed class DeleteProjectCommandHandler : IRequestHandler<DeleteProjectCommand>
 {
     private readonly IProjectRepository _projectRepository;
