@@ -15,9 +15,7 @@ internal sealed class GetProjectTypesHandler : IRequestHandler<GetProjectTypes, 
     private readonly IProjectTypeRepository _projectTypeRepository;
     private readonly IMapper _mapper;
 
-    public GetProjectTypesHandler(
-        IProjectTypeRepository projectTypeRepository,
-        IMapper mapper)
+    public GetProjectTypesHandler(IProjectTypeRepository projectTypeRepository, IMapper mapper)
     {
         _projectTypeRepository = projectTypeRepository;
         _mapper = mapper;
