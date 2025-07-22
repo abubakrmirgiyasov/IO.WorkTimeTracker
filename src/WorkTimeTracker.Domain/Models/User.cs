@@ -6,6 +6,8 @@ namespace WorkTimeTracker.Domain.Models;
 
 public class User : Entity
 {
+    public string FirstName { get; private set; }
+
     public string MiddleName { get; private set; }
 
     public string Email { get; private set; }
@@ -22,18 +24,27 @@ public class User : Entity
 
     public Image Image { get; set; } = default!;
 
-    public User(string middleName, string email, string password, bool isActive)
+    public User(string fullName, string middleName, string email, string password, bool isActive)
     {
+        FirstName = fullName;
         MiddleName = middleName;
         Email = email;
         Password = password;
         IsActive = isActive;
     }
 
-    public void SetFullName(string fullName)
+    public void SetFullName(string firstName)
+    {
+        if (string.IsNullOrWhiteSpace(firstName))
+            throw new BussinessLogicException(UsersErrors.FirstNameCantBeNull);
+
+        FirstName = firstName;
+    }
+
+    public void SetMiddleName(string fullName)
     {
         if (string.IsNullOrWhiteSpace(fullName))
-            throw new BussinessLogicException(UsersErrors.FullNameCantBeNull);
+            throw new BussinessLogicException(UsersErrors.MiddleNameCantBeNull);
 
         MiddleName = fullName;
     }
@@ -88,8 +99,13 @@ public class User : Entity
 
     public class UsersErrors
     {
-        public static readonly Error FullNameCantBeNull = new(
-            "Users.FullNameCantBeNull",
+        public static readonly Error FirstNameCantBeNull = new(
+            "User.FirstNameCantBeNull",
+            "Полное имя не может быть пустым."
+        );
+
+        public static readonly Error MiddleNameCantBeNull = new(
+            "User.FullNameCantBeNull",
             "Полное имя не может быть пустым."
         );
 
@@ -120,7 +136,7 @@ public class User : Entity
 
         public static readonly Error ImageIdCantBeNull = new(
             "User.ImageIdCantBeNull",
-            "Идентификатор изображения (ImageId) не может быть пустым."
+            "Идентификатор изображения не может быть пустым."
         );
     }
 }

@@ -31,6 +31,9 @@ public class Image : Entity
         if (size <= 0)
             throw new BussinessLogicException(ImageErrors.SizeCantBeNull);
 
+        if (size > 5 * 1024 * 1024)
+            throw new BussinessLogicException(ImageErrors.SizeTooLarge);
+
         Size = size;
     }
 
@@ -44,6 +47,11 @@ public class Image : Entity
         public static readonly Error SizeCantBeNull = new(
             "Image.SizeCantBeNull",
             "Размер изображения не может быть пустым."
+        );
+
+        public static readonly Error SizeTooLarge = new(
+            "Image.SizeTooLarge",
+            "Размер изображения не должен превышать 5 МБ."
         );
     }
 }
