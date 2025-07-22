@@ -15,7 +15,7 @@ public class Permission : Entity
         Title = title;
     }
 
-    public void SetTitleSpace(string title)
+    public void SetTitle(string title)
     {
         if (string.IsNullOrWhiteSpace(title))
             throw new BussinessLogicException(PermissionErrors.TitleCantBeNull);
@@ -23,7 +23,7 @@ public class Permission : Entity
         Title = title;
     }
 
-    public void SetDescriptionSpace(string description)
+    public void SetDescription(string description)
     {
         if (!string.IsNullOrWhiteSpace(description))
             throw new BussinessLogicException(PermissionErrors.DescriptionCantBeNull);

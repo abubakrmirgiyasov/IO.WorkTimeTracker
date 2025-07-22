@@ -1,4 +1,5 @@
 namespace WorkTimeTracker.Domain.Models;
+
 public class UserPermissionRelation
 {
     public required long UserId { get; set; }
