@@ -24,9 +24,9 @@ public class User : Entity
 
     public Image Image { get; set; } = default!;
 
-    public User(string fullName, string middleName, string email, string password, bool isActive)
+    public User(string firstName, string middleName, string email, string password, bool isActive)
     {
-        FirstName = fullName;
+        FirstName = firstName;
         MiddleName = middleName;
         Email = email;
         Password = password;
