@@ -11,13 +11,12 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
         builder.HasIndex(x => x.FirstName);
         builder.HasIndex(x => x.MiddleName);
 
-        builder.HasIndex(x => x.Email)
+        builder
+            .HasIndex(x => x.Email)
             .IsUnique();
 
-        builder.HasIndex(x => x.PhoneNumber)
-            .IsUnique();
-
-        builder.HasIndex(x => x.Password)
+        builder
+            .HasIndex(x => x.PhoneNumber)
             .IsUnique();
     }
 }

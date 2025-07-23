@@ -11,8 +11,5 @@ public class ImageConfiguration : IEntityTypeConfiguration<Image>
         builder
             .HasIndex(x => x.FullPath)
             .IsUnique();
-
-        builder
-            .Property(x => x.Size);
     }
 }

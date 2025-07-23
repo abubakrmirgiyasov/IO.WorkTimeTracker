@@ -6,5 +6,5 @@ public class UserPermissionRelation
     public User User { get; set; } = default!;
 
     public required long PermissionId { get; set; }
-    public Permission permission { get; set; } = default!;
+    public Permission Permission { get; set; } = default!;
 }

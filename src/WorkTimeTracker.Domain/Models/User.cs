@@ -33,7 +33,7 @@ public class User : Entity
         IsActive = isActive;
     }
 
-    public void SetFullName(string firstName)
+    public void SetFirstName(string firstName)
     {
         if (string.IsNullOrWhiteSpace(firstName))
             throw new BussinessLogicException(UsersErrors.FirstNameCantBeNull);
@@ -41,12 +41,12 @@ public class User : Entity
         FirstName = firstName;
     }
 
-    public void SetMiddleName(string fullName)
+    public void SetMiddleName(string middleName)
     {
-        if (string.IsNullOrWhiteSpace(fullName))
+        if (string.IsNullOrWhiteSpace(middleName))
             throw new BussinessLogicException(UsersErrors.MiddleNameCantBeNull);
 
-        MiddleName = fullName;
+        MiddleName = middleName;
     }
 
     public void SetEmail(string email)
@@ -75,7 +75,7 @@ public class User : Entity
 
     public void SetIsActive(bool isActive)
     {
-        if(!isActive)
+        if (!isActive)
             throw new BussinessLogicException(UsersErrors.IsActiveCantBeNull);
 
         IsActive = isActive;
@@ -83,7 +83,7 @@ public class User : Entity
 
     public void SetCanBeActiveAt(DateTime canBeActiveAt)
     {
-        if(canBeActiveAt == DateTime.MinValue)
+        if (canBeActiveAt == DateTime.MinValue)
             throw new BussinessLogicException(UsersErrors.CanBeActiveAtCantBeNull);
 
         CanBeActiveAt = canBeActiveAt;
@@ -91,7 +91,7 @@ public class User : Entity
 
     public void SetImageId(long imageId)
     {
-        if(imageId <= 0)
+        if (imageId <= 0)
             throw new BussinessLogicException(UsersErrors.ImageIdCantBeNull);
 
         ImageId = imageId;
@@ -101,12 +101,12 @@ public class User : Entity
     {
         public static readonly Error FirstNameCantBeNull = new(
             "User.FirstNameCantBeNull",
-            "Полное имя не может быть пустым."
+            "Имя не может быть пустым."
         );
 
         public static readonly Error MiddleNameCantBeNull = new(
-            "User.FullNameCantBeNull",
-            "Полное имя не может быть пустым."
+            "User.MiddleNameCantBeNull",
+            "Отчество не может быть пустым."
         );
 
         public static readonly Error EmailCantBeNull = new(
