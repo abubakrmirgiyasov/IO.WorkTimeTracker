@@ -15,6 +15,14 @@ public class ApplicationDbContext : DbContext
 
     public DbSet<ProjectWithProjectTypeRelation> ProjectdWithProjectTypes => Set<ProjectWithProjectTypeRelation>();
 
+    public DbSet<User> Users => Set<User>();
+
+    public DbSet<Permission> Permissions => Set<Permission>();
+
+    public DbSet<UserPermissionRelation> UsersPermissions => Set<UserPermissionRelation>();
+
+    public DbSet<Image> Images => Set<Image>();
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
